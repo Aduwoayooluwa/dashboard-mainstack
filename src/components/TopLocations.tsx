@@ -1,3 +1,5 @@
+import ListSkeletonLoader from '@/container/ListSkeletonLoader'
+import PieChartSkeleton from '@/container/PieChartSkeleton'
 import useGetData from '@/hooks/useGetData'
 import { Location } from '@/utils/locations'
 import React from 'react'
@@ -18,8 +20,27 @@ const TopLocations = (props: Props) => {
         countryArr.push(item.country)
     })
 
-    if (isLoading || data?.top_locations === undefined) {
-        return <>Loading..</>
+    if (isLoading && typeof data === undefined) {
+        return <>
+        <div className='w-[500px] p-5 bg-white my-14 shadow-sm rounded-md border border-1-gray-500 h-[326px]'>
+            <div className='flex justify-between items-center'>
+                <p className='font-semibold'>Top Locations</p>
+                <p className='text-xs'>View Full Reports</p>
+            </div>
+
+            <div className='flex item-center justify-between'>
+                <div className='mt-8'>
+
+                   <ListSkeletonLoader />
+                </div>
+
+                <div className='w-[200px]'>
+                    <PieChartSkeleton />
+                </div>
+            </div>
+        </div>
+            
+        </>
     }
     return (
         <div className='w-[500px] p-5 bg-white my-14 shadow-sm rounded-md border border-1-gray-500 h-[326px]'>

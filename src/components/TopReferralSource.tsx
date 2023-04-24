@@ -2,6 +2,8 @@
 import React from 'react'
 import useGetData from '@/hooks/useGetData'
 import { PieChart } from 'react-minimal-pie-chart'
+import PieChartSkeleton from '@/container/PieChartSkeleton'
+import ListSkeletonLoader from '@/container/ListSkeletonLoader'
 type Props = {}
 
 const TopReferralSource = (props: Props) => {
@@ -18,8 +20,26 @@ const TopReferralSource = (props: Props) => {
         countryArr.push(item.source)
     })
 
-    if (isLoading || data?.top_locations === undefined) {
-        return <>Loading..</>
+    if (isLoading && typeof data === undefined) {
+        return <>
+            <div className='w-[500px] p-5 bg-white my-14 shadow-sm rounded-md border border-1-gray-500 h-[326px]'>
+            <div className='flex justify-between items-center'>
+                <p className='font-semibold'>Top Locations</p>
+                <p className='text-xs'>View Full Reports</p>
+            </div>
+
+            <div className='flex item-center justify-between'>
+                <div className='mt-8'>
+
+                   <ListSkeletonLoader />
+                </div>
+
+                <div className='w-[200px]'>
+                    <PieChartSkeleton />
+                </div>
+            </div>
+        </div>
+        </>
     }
 
 

@@ -1,3 +1,4 @@
+import BarChart from '@/container/ChartSkeleton';
 import useGetData  from '@/hooks/useGetData'
 import React from 'react'
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, AreaChart, Area } from 'recharts';
@@ -54,7 +55,9 @@ const GraphData = (props: Props) => {
 
     ]
 
-    if (isLoading) return <div>Loading....</div>
+    if (isLoading) return <div className='my-6'>
+      <BarChart />
+    </div>
 
     if (error) return <div>Error in Program</div>
     // console.log(arrays)
