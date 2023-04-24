@@ -13,7 +13,7 @@ const Dashboard = (props: Props) => {
             <div className='w-full'>
                 <p className='font-semibold text-black'>Dashboard</p>
                 
-                <div className='flex justify-between items-center w-full'>
+                <div className='flex justify-between mt-10 items-center w-full'>
                     <div>
                         <p className='text-dark font-semibold text-[24px]'>Good morning Blessing</p>
                         <small>Check out your dashboard summary.</small>

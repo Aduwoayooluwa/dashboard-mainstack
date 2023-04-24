@@ -16,7 +16,7 @@ const SideBar = (props: Props) => {
                                 return (
                                     <div key={index} className='cursor-pointer items-center flex my-3'>
                                         <img className='mr-3' src={items.icon} alt={items.name} />
-                                        <p className='font-semibold text-[#4D5760] text-lg'>{items.name}</p>
+                                        <p className='font-medium text-[#4D5760] text-[16px]'>{items.name}</p>
                                     </div>
                                 )
                             })
@@ -30,7 +30,7 @@ const SideBar = (props: Props) => {
                                     return (
                                         <div key={index} className='cursor-pointer flex items-center my-3'>
                                             <img className='mr-3' src={items.icon} alt={items.name} />
-                                            <p className='font-semibold text-[#4D5760] text-lg'>{items.name}</p>
+                                            <p className='font-medium text-[#4D5760] text-[16px]'>{items.name}</p>
                                         </div>
                                     )
                                 })
@@ -46,7 +46,7 @@ const SideBar = (props: Props) => {
                                 return (
                                     <div key={index} className='cursor-pointer flex items-center my-3'>
                                         <img className="mr-3" src={items.icon} alt={items.name} />
-                                        <p className='font-semibold text-[#4D5760] text-lg'>{items.name}</p>
+                                        <p className='font-medium text-[#4D5760] text-[16px]'>{items.name}</p>
                                     </div>
                                 )
                             })
