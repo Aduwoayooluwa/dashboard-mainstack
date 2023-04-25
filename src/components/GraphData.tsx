@@ -67,9 +67,11 @@ const GraphData = ({data, error, isLoading }: Props) => {
     // console.log(arrays)
   return (
     <div className='text-black'>
-      <div className='my-6 text-black'>
+      <div className='my-6 text-black leading-8'>
         <p className='font-semibold font-lg'>Page Views</p>
         <p>All Time</p>
+
+        <p className='text-[3rem] mt-6 font-semibold'>500</p>
       </div>
       
       <div></div>
