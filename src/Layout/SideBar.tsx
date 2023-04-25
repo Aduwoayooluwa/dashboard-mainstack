@@ -10,6 +10,7 @@ const SideBar = (props: Props) => {
     <>
         <main className='flex items-start w-full h-full bg-white'>
             <div className='bg-white w-[304px] h-full p-10'>
+                <img src='/assets/main_logo.svg' alt='' />
                     <section className='mb-8'>
                         {
                             sideBarMenu.map((items:any, index: number) => {
@@ -51,6 +52,11 @@ const SideBar = (props: Props) => {
                                 )
                             })
                         }
+                    </section>
+
+                    <section className='text-[#4D5760] mt-28 flex items-center'>
+                        <img className='rounded-full mr-2' src='/assets/blessing_main.svg' alt='' loading='lazy' />
+                        <p>Blessing Daniels</p>
                     </section>
             </div>
 

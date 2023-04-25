@@ -9,24 +9,15 @@ type Props = {
 }
 
 const TopLocations = ({data, error, isLoading }: Props) => {
-    // const {  data, error, isLoading } = useGetData()
 
     const percentArr: any = []
     const countryArr: any = []
-
-    // data?.top_locations!== undefined && data.top_locations.map((item: any) => {
-    //     percentArr.push(item.percent)
-    // })
 
     if (typeof data !== null && typeof data !== 'undefined') {
         data.top_locations.map((item: any) => {
             percentArr.push(item.percent)
         })
     }
-
-    // data?.top_locations!== undefined && data.top_locations.map((item: any) => {
-    //     countryArr.push(item.country)
-    // })
 
     if (typeof data !== null && typeof data !== 'undefined') {
         data.top_locations.map((item: any) => {
@@ -67,18 +58,6 @@ const TopLocations = ({data, error, isLoading }: Props) => {
 
             <div className='flex item-center justify-between'>
                 <div className='mt-8'>
-                    {/* {
-                        Location.map((data: any, index: number) => {
-                            return (
-                                <div key={index} className='flex items-center font-medium leading-8 my-2'>
-                                    <img className='mr-2' src={data.flag !== undefined ? data.flag : ''} alt={data.country} />
-                                    <p className='font-medium'>{data.country}</p>
-                                    <p className='font-semibold ml-2'>{data.percentage}%</p>
-                                </div>
-                            )
-                        })
-                    } */}
-
                     {
                         data?.top_locations!== undefined && data.top_locations.map((data:any, index:number) => {
                             return (
