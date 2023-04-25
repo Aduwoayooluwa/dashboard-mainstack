@@ -1,9 +1,5 @@
 import ListSkeletonLoader from '@/container/ListSkeletonLoader'
 import PieChartSkeleton from '@/container/PieChartSkeleton'
-import { DataContext } from '@/context/DataContext'
-import useGetData from '@/hooks/useGetData'
-import { Location } from '@/utils/locations'
-import React, { useContext } from 'react'
 import { PieChart } from 'react-minimal-pie-chart'
 
 type Props = {
@@ -98,12 +94,13 @@ const TopLocations = ({data, error, isLoading }: Props) => {
 
                 <div className='w-[200px]'>
                 <PieChart
+                lineWidth={35} 
                     data={[
-                        { title: countryArr[0], value: percentArr[0], color: '#E38627' },
-                        { title: countryArr[1], value: percentArr[1], color: '#C13C37' },
-                        { title: countryArr[2], value: percentArr[2], color: '#6A2135' },
-                        { title: countryArr[3], value: percentArr[3], color: '#2efec3' },
-                        { title: countryArr[4], value: percentArr[4], color: '#fefefe' },
+                        { title: countryArr[0], value: percentArr[0], color: '#599EEA' },
+                        { title: countryArr[1], value: percentArr[1], color: '#844FF6' },
+                        { title: countryArr[2], value: percentArr[2], color: '#0FB77A' },
+                        { title: countryArr[3], value: percentArr[3], color: '#FAB70A' },
+                        { title: countryArr[4], value: percentArr[4], color: '#F09468' },
                     ]}
                 
                 />;
