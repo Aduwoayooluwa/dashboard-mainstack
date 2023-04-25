@@ -6,7 +6,8 @@ interface sideInterface {
 export const sideBarMenu = [ 
     {
         name: 'Dashboard',
-        icon: 'assets/dashboard.svg'
+        icon: 'assets/dashboard.svg',
+        color: '#FF5403'
     },
     {
         name: 'Item 1',

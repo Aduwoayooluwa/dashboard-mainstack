@@ -53,7 +53,7 @@ const TopLocations = ({data, error, isLoading }: Props) => {
         <div className='w-[500px] p-5 bg-white my-14 shadow-sm rounded-md border border-1-gray-500 h-[326px]'>
             <div className='flex text-black justify-between items-center'>
                 <p className='font-semibold'>Top Locations</p>
-                <p className='text-xs'>View Full Reports</p>
+                <p className='text-xs text-[#FF5403]'>View Full Reports</p>
             </div>
 
             <div className='flex item-center justify-between'>
