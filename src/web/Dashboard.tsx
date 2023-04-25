@@ -2,19 +2,22 @@ import SideBar from '@/Layout/SideBar'
 import GraphData from '@/components/GraphData'
 import TopLocations from '@/components/TopLocations'
 import TopReferralSource from '@/components/TopReferralSource'
+import useGetData from '@/hooks/useGetData'
 import React from 'react'
 
 type Props = {}
 
 const Dashboard = (props: Props) => {
-  return (
+    const {  data, error, isLoading } = useGetData()
+
+    return (
     <>
         <SideBar>
             <div className='w-full'>
                 <p className='font-semibold text-black'>Dashboard</p>
                 
                 <div className='flex justify-between mt-10 items-center w-full'>
-                    <div>
+                    <div className='text-black'>
                         <p className='text-dark font-semibold text-[24px]'>Good morning Blessing</p>
                         <small>Check out your dashboard summary.</small>
                     </div>
@@ -24,7 +27,7 @@ const Dashboard = (props: Props) => {
                     </div>
                 </div>
 
-                <section className='flex items-center w-2/3 my-10 justify-evenly'>
+                <section className='flex items-center text-black w-2/3 my-10 justify-evenly'>
                     <div className='rounded-full font-semibold p-2 w-full '>
                         1 Day
                     </div>
@@ -52,17 +55,17 @@ const Dashboard = (props: Props) => {
                 
                 {/* graph data representation */}
                 <section>
-                    <GraphData />
+                    <GraphData data={data} error={error} isLoading={isLoading}/>
                 </section>
 
                 {/* top datats */}
                 <section className='flex justify-between items-center w-full'>
                     <div>
-                        <TopLocations />
+                        <TopLocations data={data} error={error} isLoading={isLoading}/>
                     </div>
 
                     <div>
-                        <TopReferralSource />
+                        <TopReferralSource data={data} error={error} isLoading={isLoading}/>
                     </div>
                 </section>
             </div>

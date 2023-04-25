@@ -4,10 +4,15 @@ import useGetData from '@/hooks/useGetData'
 import { PieChart } from 'react-minimal-pie-chart'
 import PieChartSkeleton from '@/container/PieChartSkeleton'
 import ListSkeletonLoader from '@/container/ListSkeletonLoader'
-type Props = {}
 
-const TopReferralSource = (props: Props) => {
-    const { data, error, isLoading } = useGetData()
+type Props = {
+    data:any
+    error:any
+    isLoading: boolean
+}
+
+const TopReferralSource = ({data, error, isLoading }: Props) => {
+    //const { data, error, isLoading } = useGetData()
 
     const percentArr: any = []
     const countryArr: any = []
@@ -22,7 +27,7 @@ const TopReferralSource = (props: Props) => {
 
     if (isLoading && typeof data === undefined) {
         return <>
-            <div className='w-[500px] p-5 bg-white my-14 shadow-sm rounded-md border border-1-gray-500 h-[326px]'>
+            <div className='w-[500px] p-5 bg-white my-14 text-dark shadow-sm rounded-md border border-1-gray-500 h-[326px]'>
             <div className='flex justify-between items-center'>
                 <p className='font-semibold'>Top Locations</p>
                 <p className='text-xs'>View Full Reports</p>
@@ -31,7 +36,7 @@ const TopReferralSource = (props: Props) => {
             <div className='flex item-center justify-between'>
                 <div className='mt-8'>
 
-                   <ListSkeletonLoader />
+                <ListSkeletonLoader />
                 </div>
 
                 <div className='w-[200px]'>
@@ -48,8 +53,8 @@ const TopReferralSource = (props: Props) => {
     }
     
     return (
-        <div className='w-[500px] p-5 bg-white my-14 shadow-sm rounded-md border border-1-gray-500 h-[326px]'>
-            <div className='flex justify-between items-center'>
+        <div className='w-[500px] p-5 bg-white text-black my-14 shadow-sm rounded-md border border-1-gray-500 h-[326px]'>
+            <div className='flex text-black justify-between items-center'>
                 <p className='font-semibold'>Top Sources</p>
                 <p className='text-xs'>View Full Reports</p>
             </div>

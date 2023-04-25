@@ -3,10 +3,14 @@ import useGetData  from '@/hooks/useGetData'
 import React from 'react'
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, AreaChart, Area } from 'recharts';
 
-type Props = {}
+type Props = {
+  data:any
+  error:any
+  isLoading: boolean
+}
 
-const GraphData = (props: Props) => {
-    const { isLoading, data, error } = useGetData()
+const GraphData = ({data, error, isLoading }: Props) => {
+    // const { isLoading, data, error } = useGetData()
 
 
     // console.log(Object?.keys(data?.graph_data.views))
@@ -62,8 +66,8 @@ const GraphData = (props: Props) => {
     if (error) return <div>Error in Program</div>
     // console.log(arrays)
   return (
-    <div>
-      <div className='my-6 '>
+    <div className='text-black'>
+      <div className='my-6 text-black'>
         <p className='font-semibold font-lg'>Page Views</p>
         <p>All Time</p>
       </div>

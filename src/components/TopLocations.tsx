@@ -1,29 +1,49 @@
 import ListSkeletonLoader from '@/container/ListSkeletonLoader'
 import PieChartSkeleton from '@/container/PieChartSkeleton'
+import { DataContext } from '@/context/DataContext'
 import useGetData from '@/hooks/useGetData'
 import { Location } from '@/utils/locations'
-import React from 'react'
+import React, { useContext } from 'react'
 import { PieChart } from 'react-minimal-pie-chart'
-type Props = {}
 
-const TopLocations = (props: Props) => {
-    const { data, error, isLoading } = useGetData()
+type Props = {
+    data:any
+    error:any
+    isLoading: boolean
+}
+
+const TopLocations = ({data, error, isLoading }: Props) => {
+    // const {  data, error, isLoading } = useGetData()
 
     const percentArr: any = []
     const countryArr: any = []
 
-    data?.top_locations!== undefined && data.top_locations.map((item: any) => {
-        percentArr.push(item.percent)
-    })
+    // data?.top_locations!== undefined && data.top_locations.map((item: any) => {
+    //     percentArr.push(item.percent)
+    // })
 
-    data?.top_locations!== undefined && data.top_locations.map((item: any) => {
-        countryArr.push(item.country)
-    })
+    if (typeof data !== null && typeof data !== 'undefined') {
+        data.top_locations.map((item: any) => {
+            percentArr.push(item.percent)
+        })
+    }
 
-    if (isLoading && typeof data === undefined) {
+    // data?.top_locations!== undefined && data.top_locations.map((item: any) => {
+    //     countryArr.push(item.country)
+    // })
+
+    if (typeof data !== null && typeof data !== 'undefined') {
+        data.top_locations.map((item: any) => {
+            countryArr.push(item.country)
+        })
+    }
+
+    
+
+    if (isLoading) {
         return <>
-        <div className='w-[500px] p-5 bg-white my-14 shadow-sm rounded-md border border-1-gray-500 h-[326px]'>
-            <div className='flex justify-between items-center'>
+        <div className='w-[500px] p-5  bg-white my-14 shadow-sm rounded-md border border-1-gray-500 h-[326px]'>
+            <div className='flex text-black justify-between items-center'>
                 <p className='font-semibold'>Top Locations</p>
                 <p className='text-xs'>View Full Reports</p>
             </div>
@@ -31,7 +51,7 @@ const TopLocations = (props: Props) => {
             <div className='flex item-center justify-between'>
                 <div className='mt-8'>
 
-                   <ListSkeletonLoader />
+                    <ListSkeletonLoader />
                 </div>
 
                 <div className='w-[200px]'>
@@ -44,7 +64,7 @@ const TopLocations = (props: Props) => {
     }
     return (
         <div className='w-[500px] p-5 bg-white my-14 shadow-sm rounded-md border border-1-gray-500 h-[326px]'>
-            <div className='flex justify-between items-center'>
+            <div className='flex text-black justify-between items-center'>
                 <p className='font-semibold'>Top Locations</p>
                 <p className='text-xs'>View Full Reports</p>
             </div>
@@ -66,7 +86,7 @@ const TopLocations = (props: Props) => {
                     {
                         data?.top_locations!== undefined && data.top_locations.map((data:any, index:number) => {
                             return (
-                                <div key={index} className='flex items-center font-medium leading-8 my-2'>
+                                <div key={index} className='flex text-black items-center font-medium leading-8 my-2'>
                                     {/* <img className='mr-2' src={data.flag !== undefined ? data.flag : ''} alt={data.country} /> */}
                                     <p className='font-medium'>{data.country}</p>
                                     <p className='font-semibold ml-2'>{data.percent}%</p>
