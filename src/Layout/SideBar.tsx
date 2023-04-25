@@ -6,9 +6,9 @@ type Props = {
 }
 
 const SideBar = (props: Props) => {
-  return (
+    return (
     <>
-        <main className='flex items-start w-full h-full bg-white'>
+        <main className='hidden md:flex items-start w-full h-full bg-white'>
             <div className='bg-white w-[304px] h-full p-10'>
                 <img src='/assets/main_logo.svg' alt='' />
                     <section className='mb-8'>

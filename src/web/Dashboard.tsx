@@ -18,7 +18,7 @@ const Dashboard = (props: Props) => {
                 
                 <div className='flex justify-between mt-10 items-center w-full'>
                     <div className='text-black'>
-                        <p className='text-dark font-semibold text-[24px]'>Good morning Blessing</p>
+                        <p className='text-dark font-semibold text-[24px]'>Good morning, Blessing ⛅️</p>
                         <small>Check out your dashboard summary.</small>
                     </div>
 
