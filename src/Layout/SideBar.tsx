@@ -24,7 +24,7 @@ const SideBar = (props: Props) => {
                     </section>
                     {/* other section.... */}
                     <section className='mb-8'>
-                        <p>Others 2</p>
+                        <p className='text-[#4D5760]'>Others 2</p>
                         {
                                 others_1.map((items:any, index: number) => {
                                     return (
@@ -40,7 +40,7 @@ const SideBar = (props: Props) => {
                     {/* other 2 section */}
 
                     <section className='mb-8'>
-                        <p>Others 1</p>
+                        <p className='text-[#4D5760]'>Others 1</p>
                         {
                             others_2.map((items:any, index: number) => {
                                 return (
