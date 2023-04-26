@@ -25,7 +25,7 @@ const TopReferralSource = ({data, error, isLoading }: Props) => {
         countryArr.push(item.source)
     })
 
-    if (isLoading && typeof data === undefined) {
+    if (isLoading) {
         return <>
             <div className='w-[500px] p-5 bg-white my-14 text-dark shadow-sm rounded-md border border-1-gray-500 h-[326px]'>
             <div className='flex justify-between items-center'>
@@ -33,7 +33,7 @@ const TopReferralSource = ({data, error, isLoading }: Props) => {
                 <p className='text-xs'>View Full Reports</p>
             </div>
 
-            <div className='flex item-center justify-between'>
+            <div className='flex item-center justify-around'>
                 <div className='mt-8'>
 
                 <ListSkeletonLoader />
@@ -49,7 +49,16 @@ const TopReferralSource = ({data, error, isLoading }: Props) => {
 
 
     if (error) {
-        return <>Error Displaying..</>
+        return <><div className='w-[500px] p-5 bg-white my-14 text-dark shadow-sm rounded-md border border-1-gray-500 h-[326px]'>
+        <div className='flex justify-between items-center'>
+            <p className='font-semibold'>Top Locations</p>
+            <p className='text-xs'>View Full Reports</p>
+        </div>
+
+        <div className='flex item-center justify-center h-full'>
+            <p className='font-bold text-[#FF5403] text-center '>Error Displaying Charts</p>
+        </div>
+    </div>.</>
     }
     
     return (
