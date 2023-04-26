@@ -1,7 +1,7 @@
 import BarChart from '@/container/ChartSkeleton';
 import useGetData  from '@/hooks/useGetData'
 import Image from 'next/image';
-import React from 'react'
+import React, { useEffect } from 'react'
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, AreaChart, Area } from 'recharts';
 
 type Props = {
@@ -13,11 +13,23 @@ type Props = {
 const GraphData = ({data, error, isLoading }: Props) => {
 
     const myDate  = new Date()
-    let arrayDataX: any = []
-    let arrayDataY: any = []
-    if (typeof data !== null && typeof data !== 'undefined') {
-      arrayDataX = [...Object?.keys(data?.graph_data.views)]
-      arrayDataY = [...Object?.values(data?.graph_data.views)]
+    let [arrayDataX, setArrayDataX] = React.useState<Array<any>>([])
+    let [arrayDataY, setArrayDataY] = React.useState<Array<any>>([])
+
+    useEffect(() => {
+      if (typeof data !== null && typeof data !== 'undefined') {
+        setArrayDataX([...arrayDataX, ...Object?.keys(data?.graph_data.views)])
+        setArrayDataY([...arrayDataY, ...Object?.values(data?.graph_data.views)])
+      }
+    }, [arrayDataY, arrayDataX, data])
+    
+
+    const [totalNumber, setTotalNumber] = React.useState(0)
+
+    let total = 199
+
+    for (let i=0; i<arrayDataY.length; i++) {
+      //total += arrayDataY[i]
     }
     
     // console.log(arrayDataY)
@@ -73,7 +85,7 @@ const GraphData = ({data, error, isLoading }: Props) => {
         </div>
         
 
-        <p className='text-[3rem] mt-8 font-bold'>500</p>
+        <p className='text-[3rem] mt-8 font-bold'>{ total }</p>
       </div>
       
       <div className=''>
