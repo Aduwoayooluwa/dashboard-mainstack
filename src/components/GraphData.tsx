@@ -60,12 +60,12 @@ const GraphData = ({data, error, isLoading }: Props) => {
     if (error) return <div>Error in Program</div>
     // console.log(arrays)
   return (
-    <div className='text-black'>
-      <div className='my-6 text-black leading-8'>
-        <p className='font-semibold font-lg'>Page Views</p>
-        <p>All Time</p>
+    <div className='text-black border-1'>
+      <div className='my-6 ml-14 text-black'>
+        <p className='font-bold text-[18px]'>Page Views</p>
+        <small>All Time</small>
 
-        <p className='text-[3rem] mt-6 font-semibold'>500</p>
+        <p className='text-[3rem] mt-8 font-bold'>500</p>
       </div>
       
       <div className=''>

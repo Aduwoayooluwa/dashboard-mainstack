@@ -14,11 +14,11 @@ const Dashboard = (props: Props) => {
     <>
         <SideBar>
             <div className='w-full'>
-                <p className='font-semibold text-black'>Dashboard</p>
+                <p className='font-bold text-black mt-2'>Dashboard</p>
                 
                 <div className='flex justify-between mt-10 items-center w-full'>
                     <div className='text-black'>
-                        <p className='text-dark font-semibold text-[24px]'>Good morning, Blessing ⛅️</p>
+                        <p className='text-dark font-bold text-[24px]'>Good morning, Blessing ⛅️</p>
                         <small>Check out your dashboard summary.</small>
                     </div>
 
