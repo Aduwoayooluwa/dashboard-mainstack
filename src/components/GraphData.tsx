@@ -1,5 +1,6 @@
 import BarChart from '@/container/ChartSkeleton';
 import useGetData  from '@/hooks/useGetData'
+import Image from 'next/image';
 import React from 'react'
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, AreaChart, Area } from 'recharts';
 
@@ -62,8 +63,15 @@ const GraphData = ({data, error, isLoading }: Props) => {
   return (
     <div className='text-black border-1'>
       <div className='my-6 ml-14 text-black'>
-        <p className='font-bold text-[18px]'>Page Views</p>
-        <small>All Time</small>
+        <div className='flex items-center justify-between'>
+          <div>
+            <p className='font-bold text-[18px]'>Page Views</p>
+            <small>All Time</small>
+          </div>
+
+          <Image src={'/assets/info.svg'} width={20} height={20} alt="icon" />
+        </div>
+        
 
         <p className='text-[3rem] mt-8 font-bold'>500</p>
       </div>
