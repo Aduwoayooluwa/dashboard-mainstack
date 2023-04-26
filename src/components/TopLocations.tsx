@@ -85,6 +85,9 @@ const TopLocations = ({data, error, isLoading }: Props) => {
 
                 <div className='w-[200px]'>
                 <PieChart
+                animate={true}
+                animationDuration={500}
+                animationEasing='ease-in'
                 lineWidth={35} 
                     data={[
                         { title: countryArr[0], value: percentArr[0], color: '#599EEA' },

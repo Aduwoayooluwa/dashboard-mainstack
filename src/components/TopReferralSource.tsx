@@ -85,6 +85,9 @@ const TopReferralSource = ({data, error, isLoading }: Props) => {
                 <div className='w-[200px]'>
                 <PieChart
                 lineWidth={35}
+                animate={true}
+                animationDuration={500}
+                animationEasing='ease-in'
                     data={[
                         { title: countryArr[0], value: percentArr[0], color: '#599EEA' },
                         { title: countryArr[1], value: percentArr[1], color: '#844FF6' },
