@@ -54,13 +54,13 @@ const Dashboard = (props: Props) => {
                 </section>
                 
                 {/* graph data representation */}
-                <section>
+                <section className='w-full border-1 border-gray-300 shadow p-3'>
                     <GraphData data={data} error={error} isLoading={isLoading}/>
                 </section>
 
                 {/* top datats */}
-                <section className='flex justify-between items-center w-full'>
-                    <div>
+                <section className='flex justify-start items-center w-full'>
+                    <div className='mr-3'>
                         <TopLocations data={data} error={error} isLoading={isLoading}/>
                     </div>
 

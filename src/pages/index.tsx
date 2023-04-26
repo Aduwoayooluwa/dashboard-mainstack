@@ -1,13 +1,14 @@
 import Image from 'next/image'
-import { Poppins } from 'next/font/google'
+import { Martel_Sans } from 'next/font/google'
 import Dashboard from '@/web/Dashboard'
 import MobileView from '@/Layout/MobileView'
 
-const poppins = Poppins({ subsets: ['latin'], weight: ["100", "200", "300", "400", "600", "800"] })
+
+const martel_sans = Martel_Sans({ subsets: ['latin'], weight: ["200", "300", "400", "600", "800"] })
 
 export default function Home() {
   return (
-    <main className={`${poppins.className}`}>
+    <main className={`${martel_sans.className}`}>
       <Dashboard />
       <MobileView />
     </main>

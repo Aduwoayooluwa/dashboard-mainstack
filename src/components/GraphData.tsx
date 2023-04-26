@@ -10,13 +10,7 @@ type Props = {
 }
 
 const GraphData = ({data, error, isLoading }: Props) => {
-    // const { isLoading, data, error } = useGetData()
 
-
-    // console.log(Object?.keys(data?.graph_data.views))
-    // const xVal = Object?.keys(data?.graph_data.views)
-  
-    // console.log()
     const myDate  = new Date()
     let arrayDataX: any = []
     let arrayDataY: any = []
@@ -74,7 +68,7 @@ const GraphData = ({data, error, isLoading }: Props) => {
         <p className='text-[3rem] mt-6 font-semibold'>500</p>
       </div>
       
-      <div></div>
+      <div className=''>
       <AreaChart width={800} height={250} data={datas}
     margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
     <defs>
@@ -92,7 +86,10 @@ const GraphData = ({data, error, isLoading }: Props) => {
     <CartesianGrid strokeDasharray="3 3" />
     <Tooltip />
     <Area type="monotone" dataKey="y" stroke="#FF5403" fillOpacity={1} fill="url(#colorUv)" />
-  </AreaChart>
+      </AreaChart>
+
+      </div>
+      
     </div>
   )
 }

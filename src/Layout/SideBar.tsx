@@ -64,9 +64,9 @@ const SideBar = (props: Props) => {
                 { props.children }
             </div>
         </main>
-       
+    
     </>
-  )
+)
 }
 
 export default SideBar
